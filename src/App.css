@@ -1,0 +1,55 @@
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10)
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0)
+    }
+}
+
+@keyframes opacityIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-0)
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0)
+    }
+}
+
+.appNav {
+    animation: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background: transparent;
+
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+}
+

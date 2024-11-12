@@ -1,0 +1,81 @@
+/* Contact Page Styling */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px; /* Push content below the navbar */
+  background: #ffffff; /* White background */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  color: #101010; /* Dark text for title */
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #ffffff; /* White form background */
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #cccccc; /* Light gray border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Labels */
+.contact label {
+  font-size: 1rem;
+  color: #333333; /* Darker gray for labels */
+  margin-bottom: 5px;
+}
+
+/* Input fields */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #f9f9f9; /* Light gray background */
+  transition: border-color 0.3s ease;
+}
+
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+  border-color: #888888; /* Slightly darker border on focus */
+  outline: none;
+}
+
+/* Button styling */
+.contact button[type="submit"] {
+  padding: 12px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: #333333; /* Dark button for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.contact button[type="submit"]:hover {
+  background: #444444; /* Slightly lighter on hover */
+}
+
+.contact button[type="submit"]:active {
+  transform: scale(0.98); /* Subtle click effect */
+}
