@@ -2,9 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
-// Routes
+// Import Routes
 const contactRoutes = require('./routes/contactRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 
@@ -12,8 +11,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors({
+  origin: 'https://vidoyo.netlify.app',  // Update to your Netlify URL
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
+app.use(express.json()); // Parses incoming JSON requests
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -21,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB connected...'))
-.catch(err => console.log(err));
+.catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
 app.use('/api/contact', contactRoutes);
