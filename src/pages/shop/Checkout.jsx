@@ -80,7 +80,7 @@ const Checkout = () => {
         };
 
         try {
-            const response = await fetch('https://vidoyo-backend-f0g6vrjpg-shahneelas-projects.vercel.app/api/order', {
+            const response = await fetch('https://vidoyo-backend-ja4l50p8m-shahneelas-projects.vercel.app/api/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

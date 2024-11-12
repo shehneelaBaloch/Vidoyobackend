@@ -15,7 +15,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://vidoyo-backend-f0g6vrjpg-shahneelas-projects.vercel.app/api/Contact', {
+            const response = await fetch('https://vidoyo-backend-ja4l50p8m-shahneelas-projects.vercel.app/api/Contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

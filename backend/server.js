@@ -10,12 +10,17 @@ const orderRoutes = require('./routes/orderRoutes');
 dotenv.config();
 const app = express();
 
-// Middleware
+// CORS Configuration
 app.use(cors({
-  origin: 'https://vidoyo.netlify.app',  // Update to your Netlify URL
+  origin: 'https://vidoyo.netlify.app', // Your frontend URL
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
+
+// Handle OPTIONS requests for CORS preflight
+app.options('*', cors());
+
+// Middleware to parse JSON and URL-encoded data
 app.use(express.json()); // Parses incoming JSON requests
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies
 
@@ -30,6 +35,11 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use('/api/contact', contactRoutes);
 app.use('/api/order', orderRoutes);
+
+// Catch-all route for undefined endpoints (optional for debugging)
+app.use((req, res, next) => {
+  res.status(404).send('Route not found');
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
