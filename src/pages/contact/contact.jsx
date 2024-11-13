@@ -13,29 +13,32 @@ const Contact = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('https://vidoyo-backend-ja4l50p8m-shahneelas-projects.vercel.app/api/Contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to send message');
-            }
-
-            const data = await response.json();
-            if (data && data.message) {
-                alert(data.message);
-            } else {
-                alert('Message sent successfully');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Failed to send message');
-        }
-    };
+      e.preventDefault();
+      try {
+          const response = await fetch('http://localhost:5000/api/Contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData),
+          });
+  
+          if (!response.ok) {
+              throw new Error('Failed to send message');
+          }
+  
+          const data = await response.json();
+  
+          // Check if `data` has the `message` field
+          if (data && data.message) {
+              alert(data.message);
+          } else {
+              alert('Message sent successfully'); // Fallback message
+          }
+      } catch (error) {
+          console.error('Error:', error);
+          alert('Failed to send message');
+      }
+  };
+  
 
     return (
         <div className='contact'>

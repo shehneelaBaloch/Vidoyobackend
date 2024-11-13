@@ -12,7 +12,7 @@ const CartItem = (props) => {
             <img src={productImage} alt={productName} />
             <h3>{productName}</h3>
             <h4>Quantity: {cartItemAmount}</h4>
-            <p>Price: ${price}</p>
+            <p>Price: Rs{price}</p>
             <div><button className='removeBttn' onClick={() => removeFromCart(id)}>-</button>
             <button type='addBttn' className='addBttn' onClick={() => addToCart(id)}>+</button></div>
             
