@@ -1,8 +1,0 @@
-[build]
-  publish = "build"                   # Folder with React's build output
-  functions = "netlify/functions"      # Folder for Netlify functions
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
