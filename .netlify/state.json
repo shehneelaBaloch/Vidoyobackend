@@ -1,3 +1,21 @@
 {
-	"siteId": "db90face-9cac-48ce-a77c-4a7647fcd4bd"
+	"siteId": "db90face-9cac-48ce-a77c-4a7647fcd4bd",
+	"geolocation": {
+		"data": {
+			"city": "Badin",
+			"country": {
+				"code": "PK",
+				"name": "Pakistan"
+			},
+			"subdivision": {
+				"code": "SD",
+				"name": "Sindh"
+			},
+			"timezone": "Asia/Karachi",
+			"latitude": 24.6499,
+			"longitude": 68.8288,
+			"postalCode": "72200"
+		},
+		"timestamp": 1731573947505
+	}
 }

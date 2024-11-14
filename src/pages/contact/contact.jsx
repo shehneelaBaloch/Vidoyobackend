@@ -13,32 +13,20 @@ const Contact = () => {
     };
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          const response = await fetch('/.netlify/functions/contact', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formData),
-          });
-  
-          if (!response.ok) {
-              throw new Error('Failed to send message');
-          }
-  
-          const data = await response.json();
-  
-          // Check if `data` has the `message` field
-          if (data && data.message) {
-              alert(data.message);
-          } else {
-              alert('Message sent successfully'); // Fallback message
-          }
-      } catch (error) {
-          console.error('Error:', error);
-          alert('Failed to send message');
-      }
-  };
-  
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:5000/api/Contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to send message');
+        }
+    };
 
     return (
         <div className='contact'>
