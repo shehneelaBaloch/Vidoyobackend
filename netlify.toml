@@ -1,0 +1,6 @@
+[build]
+  publish = "build" # Folder for frontend assets (React build folder)
+  functions = "netlify/functions" # Folder for serverless functions
+
+[build.environment]
+  NODE_ENV = "production"
