@@ -22,8 +22,10 @@ const Checkout = () => {
     setTotalAmount(total);
   }, [cartItems, products]);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: '' }));  // Clear error on change
   };
 
   const handleSubmit = async (e) => {
