@@ -1,0 +1,13 @@
+[build]
+  # Command to install dependencies
+  command = "npm install"
+
+[start]
+  # Command to start your app
+  command = "npm start"
+  
+[[services]]
+  # Name of the service (can be any name)
+  name = "backend"
+  # Environment (for Node.js backend)
+  env = "node"
