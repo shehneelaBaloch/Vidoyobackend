@@ -4,7 +4,7 @@
 
 [start]
   # Command to start your app
-  command = "node backend/server.js"
+  command = "node server.js"
   
 [[services]]
   # Name of the service (can be any name)
